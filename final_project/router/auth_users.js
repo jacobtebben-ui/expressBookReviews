@@ -7,10 +7,13 @@ let users = [];
 
 const isValid = (username)=>{ //returns boolean
 //write code to check is the username is valid
+ return users.some(user => user.username === username);
 }
 
 const authenticatedUser = (username,password)=>{ //returns boolean
 //write code to check if username and password match the one we have in records.
+  const user = users.find(u => u.username === username && u.password === password);
+    return user !== undefined;
 }
 
 //only registered users can login
