@@ -51,7 +51,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
         return res.status(404).json({ message: "Book not found" });
     }
 
-    if (!book.reviews) {
+    if (!Array.isArray(book.reviews)) {
         book.reviews = [];
     }
 
